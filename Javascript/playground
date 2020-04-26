@@ -97,4 +97,61 @@ calculator()
   (subtract, 6, function(result) {
     display.log(result);
   });
+/*************************************/
+function sayHello() {
+  display.log("hello");
+};
 
+var f = sayHello;
+
+f.answer = 42;
+
+display.log(sayHello.answer);
+f();
+/**************************************/
+
+function parentFunction() {
+  let a = 10;
+
+  function double() {
+    a = a+a;
+    display.log(a);
+  };
+
+  function square() {
+    a = a*a;
+    display.log(a);
+  }
+
+  return { double, square };
+}
+
+let { double, square } = parentFunction();
+
+double();
+square();
+double();
+/**************************************/
+let a = 1;
+
+const closure1 = function() {
+  display.log(a);
+  a = 2
+}
+
+a = 3;
+
+const closure2 = function() {
+  display.log(a);
+}
+
+closure1();
+closure2();
+
+/**************************************/
+/**************************************/
+/**************************************/
+/**************************************/
+/**************************************/
+/**************************************/
+/**************************************/
