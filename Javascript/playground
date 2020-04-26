@@ -1,0 +1,28 @@
+function addArgs() {
+  let sum = 0;
+
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+
+  return sum;
+};
+
+addArgs(4, 5, 6); // or any number of arguments
+
+// -----------
+
+function multiplyArgs() {
+  // Implement...
+  let mult = 1;
+  
+  Object.values(arguments).forEach((x) =>{ mult*=x;}
+);
+   // for (let i = 0; i < arguments.length; i++) {
+    // mult *= arguments[i];
+  // }
+  
+  return mult;
+};
+
+multiplyArgs(4, 5, 6);
