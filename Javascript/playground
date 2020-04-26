@@ -26,3 +26,36 @@ function multiplyArgs() {
 };
 
 multiplyArgs(4, 5, 6);
+
+/*********************************/
+function addArgs() {
+  let sum = 0;
+
+  // Instead of: arguments.arrayMethod(arg1, arg2)
+  // You can do: arrayMethodRef.call(arguments, arg1, arg2)
+
+  Array.prototype.forEach.call(arguments, arg => {
+    sum += arg;
+  });
+
+  return sum;
+};
+
+addArgs(4, 5, 6);
+/******************/
+function addArgs(...args) {
+let sum=0;
+args.forEach((x) =>{ sum+=x;});
+return sum;
+  
+};
+
+addArgs(3, 5, 6);
+/*********************/
+function addArgs(...args) {
+  return args.reduce((acc, arg) => acc + arg);
+};
+
+addArgs(3, 5, 6);
+
+
