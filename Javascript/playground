@@ -70,4 +70,31 @@ let newArray = [1, 2, 3].filter(x=>x%2===1);
 display.log(newArray);
 /***********************/
 
+const add = (a, b) => a + b;
+const multiply = (a, b) => a * b;
+const subtract = (a, b) => a - b;
+
+function calculator() {
+  let total = 0;
+
+  function doOperation(operation, operand, callback) {
+    total = operation(total, operand);
+    // maybe invoke the callback...
+    // "result" inside the callback is "total"        
+    
+    // maybe invoke the callback...
+    // "result" inside the callback is "total"
+    if(callback) callback(total);
+    return doOperation;
+  }
+
+  return doOperation;
+}
+
+calculator()
+  (add, 3)
+  (multiply, 5)
+  (subtract, 6, function(result) {
+    display.log(result);
+  });
 
