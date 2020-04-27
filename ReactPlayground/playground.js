@@ -21,6 +21,18 @@ ReactDOM.render(
   document.getElementById('mountNode'),
 );
 /*********************************/
+function logRandom(){
+  console.log(Math.random());
+}
+function Button() { 
+  const [clickCount, setClickCount] = useState(5);
+	return <button onClick={()=>setClickCount(clickCount*2)}>{clickCount}</button>;
+}
+
+ReactDOM.render(
+  <Button />, 
+  document.getElementById('mountNode'),
+);
 /*********************************/
 /*********************************//*********************************/
 /*********************************/
