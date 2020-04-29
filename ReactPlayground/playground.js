@@ -110,6 +110,36 @@ ReactDOM.render(
   document.getElementById('mountNode'),
 );
 /*********************************/
+function Button(props) {
+// 	const [counter, setCounter] = useState(25);
+const ownHandleClick =() => props.handleClick(props.increment);
+	return (<button onClick={ownHandleClick}>
+    +{props.increment}
+  </button>
+          );
+}
+
+function Display(props){
+  return (
+  <div>{props.msg} </div>
+  );
+}
+function App(){
+  const [counter, setCounter] = useState(0);
+  const handleClick = (incVal) => setCounter(counter+incVal); 
+    return (
+    <div>
+    <Button handleClick = {handleClick} increment = {1} />
+    <Button handleClick = {handleClick} increment = {5} />
+        <Button handleClick = {handleClick} increment = {10} /><Button handleClick = {handleClick} increment = {100} />
+    <Display msg={counter}/>
+    </div>
+  );
+}
+ReactDOM.render(
+  <App/>,
+  document.getElementById('mountNode'),
+);
 /*********************************/
 /*********************************/
 /*********************************/
